@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#install ngix and put holberton inside
+#install ngix and put 'school' inside
 
 sudo apt-get update -y && \
 sudo apt-get install -y nginx
@@ -7,7 +7,7 @@ if [ $? -eq 0 ]
 then
     echo -e \
 "http {
-    root /var/www/holberton;
+    root /var/www/school;
     index index.html;
     server {
         listen 80;
@@ -17,9 +17,9 @@ then
 }
 events {
 }" > /etc/nginx/nginx.conf
-    mkdir -p /var/www/holberton
-    echo "hello Holberton School" > \
-	/var/www/holberton/index.html
+    mkdir -p /var/www/school
+    echo "Hello World!" > \
+	/var/www/school/index.html
     service nginx start
     if [ $? -ne 0 ]
     then
