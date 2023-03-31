@@ -8,7 +8,7 @@ then
     echo -e \
 "http {
     root /var/www/html;
-    index index.nginx.debian.html;
+    index index.html;
     server {
         listen 80;
         location \ {
@@ -18,7 +18,7 @@ then
 events {
 }" > /etc/nginx/nginx.conf
     mkdir -p /var/www/html
-    echo "Hello World!" > /var/www/html/index.nginx.debian.html
+    echo "Hello World!" | sudo tee /var/www/html/index.html
     sudo service nginx start
     if [ $? -ne 0 ]
     then
